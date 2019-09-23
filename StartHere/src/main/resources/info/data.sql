@@ -1,0 +1,2 @@
+-- INSERT INTO user ()
+-- INSERT INTO campaign (campaignid, title, photo, location, description, species, urgency, donations, funding_goal, userid) VALUES (1, 'Lions Need Our Help', 'https://d3jkudlc7u70kh.cloudfront.net/lions-fact.jpg', 'Oregon', 'Description', 'lions', 'high', 0.0, 3000.0, 1);
