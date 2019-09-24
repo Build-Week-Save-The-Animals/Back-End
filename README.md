@@ -2,7 +2,7 @@
 
 # Login 
 
-POST: https://build-save-the-animals.herokuapp.com/login (OAUTH2)
+POST: https://build-save-the-animals.herokuapp.com/login (OAUTH2)<br>
 GET: https://build-save-the-animals.herokuapp.com/users/getuser 
 
 # Sign-up
