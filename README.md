@@ -7,7 +7,7 @@ https://build-save-the-animals.herokuapp.com/login
 # Users
 Two types/roles:<br>
 - organization<br>
-- supporter
+- supporter<br>
 Note: both user types share 'data' role to get all campaigns data
 
 Existing users:
@@ -22,16 +22,16 @@ password: password
 
 # Endpoints
 * Get all campaigns (both user types)<br>
- GET: https://build-save-the-animals.herokuapp.com/campaigns/all
+ ## GET: https://build-save-the-animals.herokuapp.com/campaigns/all
 
 * Post a campaign (user type: organization only)<br>
- POST: https://build-save-the-animals.herokuapp.com/campaigns/campaign/add
+ ## POST: https://build-save-the-animals.herokuapp.com/campaigns/campaign/add
 
 * Edit a campaign (user type: organization only)<br>
- PUT: https://build-save-the-animals.herokuapp.com/campaigns/campaign/update/{id}
+ ## PUT: https://build-save-the-animals.herokuapp.com/campaigns/campaign/update/{id}
 
 * Delete a campaign (user type: organization only)<br>
- DELETE: https://build-save-the-animals.herokuapp.com/campaigns/campaign/delete/{id}
+ ## DELETE: https://build-save-the-animals.herokuapp.com/campaigns/campaign/delete/{id}
 
 
 
