@@ -21,16 +21,16 @@ username: supporter
 password: password
 
 # Endpoints
-// Get all campaigns (both user types)
+// Get all campaigns (both user types)<br>
  GET: https://build-save-the-animals.herokuapp.com/campaigns/all
 
-// Post a campaign (user type: organization only)
+// Post a campaign (user type: organization only)<br>
  POST: https://build-save-the-animals.herokuapp.com/campaigns/campaign/add
 
-// Edit a campaign (user type: organization only)
+// Edit a campaign (user type: organization only)<br>
  PUT: https://build-save-the-animals.herokuapp.com/campaigns/campaign/update/{id}
 
-// Delete a campaign (user type: organization only)
+// Delete a campaign (user type: organization only)<br>
  DELETE: https://build-save-the-animals.herokuapp.com/campaigns/campaign/delete/{id}
 
 
