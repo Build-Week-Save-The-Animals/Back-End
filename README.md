@@ -1,8 +1,12 @@
 # Back-End
 
-# Login / SignUp
+# Login 
 
-https://build-save-the-animals.herokuapp.com/login
+POST: https://build-save-the-animals.herokuapp.com/login (OAUTH2)
+GET: https://build-save-the-animals.herokuapp.com/users/getuser 
+
+# Sign-up
+
 
 # Users
 Two types/roles:<br>
