@@ -7,8 +7,8 @@ https://build-save-the-animals.herokuapp.com/login
 # Users
 Two types/roles:<br>
 - organization<br>
-- supporter<br>
-Note: both user types share 'data' role to get all campaigns data)
+- supporter
+Note: both user types share 'data' role to get all campaigns data
 
 Existing users:
 
