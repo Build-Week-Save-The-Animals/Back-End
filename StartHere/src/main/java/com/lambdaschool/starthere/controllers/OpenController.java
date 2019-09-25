@@ -1,5 +1,6 @@
 package com.lambdaschool.starthere.controllers;
 
+import com.lambdaschool.starthere.models.Role;
 import com.lambdaschool.starthere.models.User;
 import com.lambdaschool.starthere.models.UserRoles;
 import com.lambdaschool.starthere.services.RoleService;
@@ -47,9 +48,9 @@ public class OpenController
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        ArrayList<UserRoles> newRoles = new ArrayList<>();
-        newRoles.add(new UserRoles(newuser, roleService.findByName("user")));
-        newuser.setUserroles(newRoles);
+//        ArrayList<UserRoles> newRoles = new ArrayList<>();
+//        newRoles.add(new UserRoles(newuser, roleService.findByName("user")));
+//        newuser.setUserroles(newRoles);
 
         newuser = userService.save(newuser);
 

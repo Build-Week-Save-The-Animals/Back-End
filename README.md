@@ -7,6 +7,34 @@ GET: https://build-save-the-animals.herokuapp.com/users/getuser
 
 # Sign-up
 
+POST: https://build-save-the-animals.herokuapp.com/createnewuser
+
+{<br>
+    "username": "username",<br>
+    "password": "password",<br>
+    "userroles": [<br>
+        {<br>
+            "role": {<br>
+                "roleid": 2,<br>
+                "name": "data"  (present for both user types)<br>
+            }<br>
+        },<br>
+        {<br>
+            "role": {<br>
+                "roleid": 4,<br>
+                "name": "organization" OR "supporter"<br>
+            }<br>
+        }<br>
+    ],<br>
+    "useremails": [<br>
+        {<br>
+            "useremail": "email1@email.com"<br>
+        },<br>
+        {<br>
+            "useremail": "email2@mymail.com"<br>
+        }<br>
+    ]<br>
+}
 
 # Users
 Two types/roles:<br>
