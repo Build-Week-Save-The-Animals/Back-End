@@ -84,12 +84,11 @@ password: password
 
 
 * Make donation
-
-POST: https://build-save-the-animals.herokuapp.com/campaigns/campaign/donate
-```
-{
-	"amount": Number,
-	"userid": Number,
-	"campaignid": Number
-}
-```
+ POST: https://build-save-the-animals.herokuapp.com/campaigns/campaign/donate
+  ```
+  {
+    "amount": Number,
+    "userid": Number,
+    "campaignid": Number
+  }
+  ```
