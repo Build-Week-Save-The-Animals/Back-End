@@ -1,6 +1,7 @@
 package com.lambdaschool.starthere.controllers;
 
 import com.lambdaschool.starthere.models.User;
+import com.lambdaschool.starthere.repository.UserRepository;
 import com.lambdaschool.starthere.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -72,15 +73,17 @@ public class UserController
     }
 
 
-    @GetMapping(value = "/getusername",
+    @GetMapping(value = "/getuser",
                 produces = {"application/json"})
     @ResponseBody
     public ResponseEntity<?> getCurrentUserName(HttpServletRequest request, Authentication authentication)
     {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
+        User currentUser = userService.findByName(authentication.getName());
 
-        return new ResponseEntity<>(authentication.getPrincipal(), HttpStatus.OK);
+//        return new ResponseEntity<>(authentication.getPrincipal(), HttpStatus.OK);
+        return new ResponseEntity<>(currentUser, HttpStatus.OK);
     }
 
 

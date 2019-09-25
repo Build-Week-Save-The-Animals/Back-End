@@ -132,7 +132,7 @@ public class UserControllerIntegrationTest
     @Test
     public void E_getCurrentUserName() throws Exception
     {
-        this.mockMvc.perform(get("/users/getusername"))
+        this.mockMvc.perform(get("/users/getuser"))
                     .andDo(print())
                     .andExpect(status().isOk())
                     .andExpect(content().string(containsString("testdog")));
