@@ -100,6 +100,5 @@ password: password
   * Filter campaigns by location<br>
   GET: https://build-save-the-animals.herokuapp.com/campaigns/filter/location/{location}
 
-  * Get campaigns by user
+  * Get campaigns by user<br>
   GET: https://build-save-the-animals.herokuapp.com/campaigns/byuser/{id}
-  
