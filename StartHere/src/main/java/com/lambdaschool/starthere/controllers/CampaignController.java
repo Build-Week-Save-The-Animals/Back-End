@@ -34,6 +34,22 @@ public class CampaignController
         return new ResponseEntity<>(myCampaigns, HttpStatus.OK);
     }
 
+    // http://localhost:2019/campaigns/filter/species/{species}
+    @GetMapping(value = "/filter/species/{species}", produces = {"application/json"})
+    public ResponseEntity<?> filterByTitle(@PathVariable String species) throws ResourceNotFoundException
+    {
+        List<Campaign> filteredList = campaignService.filterBySpecies(species);
+        return new ResponseEntity<>(filteredList, HttpStatus.OK);
+    }
+
+    // http://localhost:2019/campaigns/filter/location/{location}
+    @GetMapping(value = "/filter/location/{location}", produces = {"application/json"})
+    public ResponseEntity<?> filterByLocation(@PathVariable String location) throws ResourceNotFoundException
+    {
+        List<Campaign> filteredList = campaignService.filterByLocation(location);
+        return new ResponseEntity<>(filteredList, HttpStatus.OK);
+    }
+
     // http://localhost:2019/campaigns/campaign/add
     @PostMapping(value = "campaign/add",
             consumes = {"application/json"},
@@ -76,4 +92,11 @@ public class CampaignController
         return new ResponseEntity<>(null, HttpStatus.CREATED);
     }
 
+    // http://localhost:2019/campaigns/byuser/{id}
+    @GetMapping(value = "/byuser/{id}", produces = {"application/json"})
+    public ResponseEntity<?> listCampaignsByUser(@PathVariable long id) throws ResourceNotFoundException
+    {
+        List<Campaign> userCampaigns = campaignService.findCampaignsByUser(id);
+        return new ResponseEntity<>(userCampaigns, HttpStatus.OK);
+    }
 }

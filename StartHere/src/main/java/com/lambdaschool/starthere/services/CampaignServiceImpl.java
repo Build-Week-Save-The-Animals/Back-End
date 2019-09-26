@@ -117,4 +117,20 @@ public class CampaignServiceImpl implements CampaignService
         campaign.setDonations(campaign.getDonations() + amount);
         return campaignRepository.save(campaign);
     }
+
+    @Override
+    public ArrayList<Campaign> findCampaignsByUser(long id)
+    {
+       return campaignRepository.findCampaignsByUser(id);
+    }
+
+    @Override
+    public ArrayList<Campaign> filterBySpecies(String string) {
+        return campaignRepository.filterBySpecies(string);
+    }
+
+    @Override
+    public ArrayList<Campaign> filterByLocation(String string) {
+        return campaignRepository.filterByLocation(string);
+    }
 }

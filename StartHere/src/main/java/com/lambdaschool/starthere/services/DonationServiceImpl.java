@@ -28,14 +28,16 @@ public class DonationServiceImpl implements DonationService
 
     @Override
     public Donation save(Donation donation) {
-        Donation newDonation = new Donation();
-        Campaign currentCampaign = new Campaign();
 
-        if (userRepository.findById(donation.getUserid()) == null)
+        if (userRepository.findById(donation.getUserid()) == null || campaignRepository.findById(donation.getCampaignid()) == null)
         {
-            throw new ResourceNotFoundException(Long.toString(donation.getUserid()));
-        }  else
+            throw new ResourceNotFoundException(Long.toString(donation.getUserid()) + "HELLO");
+        }
+        else
         {
+            Donation newDonation = new Donation();
+            Campaign currentCampaign = new Campaign();
+
             newDonation.setAmount(donation.getAmount());
             newDonation.setCampaignid(donation.getCampaignid());
             newDonation.setUserid(donation.getUserid());
