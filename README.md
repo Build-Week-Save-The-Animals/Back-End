@@ -92,3 +92,13 @@ password: password
     "campaignid": Number
   }
   ```
+
+* Filter campaigns by species<br>
+ GET: https://build-save-the-animals.herokuapp.com/campaigns/filter/species/{species}
+
+
+* Filter campaigns by location<br>
+ GET: https://build-save-the-animals.herokuapp.com/campaigns/filter/location/{location}
+
+* Get campaigns by user<br>
+ GET: https://build-save-the-animals.herokuapp.com/campaigns/byuser/{id}

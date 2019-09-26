@@ -4,6 +4,7 @@ import com.lambdaschool.starthere.exceptions.ResourceNotFoundException;
 import com.lambdaschool.starthere.models.Campaign;
 import org.springframework.data.domain.Pageable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface CampaignService
@@ -19,4 +20,10 @@ public interface CampaignService
     Campaign update(Campaign campaign, long id);
 
     Campaign updateDonation(Campaign campaign, double amount);
+
+    ArrayList<Campaign> findCampaignsByUser(long id);
+
+    ArrayList<Campaign> filterBySpecies(String string);
+
+    ArrayList<Campaign> filterByLocation(String string);
 }
