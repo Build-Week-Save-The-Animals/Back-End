@@ -111,4 +111,10 @@ public class CampaignServiceImpl implements CampaignService
 
         return campaignRepository.save(currentCampaign);
     }
+
+    @Override
+    public Campaign updateDonation(Campaign campaign, double amount) {
+        campaign.setDonations(campaign.getDonations() + amount);
+        return campaignRepository.save(campaign);
+    }
 }

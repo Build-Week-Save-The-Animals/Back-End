@@ -7,7 +7,35 @@ GET: https://build-save-the-animals.herokuapp.com/users/getuser
 
 # Sign-up
 
-
+POST: https://build-save-the-animals.herokuapp.com/createnewuser
+```
+{
+    "username": "username",
+    "password": "password",
+    "userroles": [
+        {
+            "role": {
+                "roleid": 2,
+                "name": "data"  (present for both user types)
+            }
+        },
+        {
+            "role": {
+                "roleid": 4,
+                "name": "organization" OR "supporter"
+            }
+        }
+    ],
+    "useremails": [
+        {
+            "useremail": "email1@email.com"
+        },
+        {
+            "useremail": "email2@mymail.com"
+        }
+    ]
+}
+```
 # Users
 Two types/roles:<br>
 - organization<br>
@@ -30,17 +58,19 @@ password: password
 
 * Post a campaign (user type: organization only)<br>
  POST: https://build-save-the-animals.herokuapp.com/campaigns/campaign/add<br>
-    {<br>
-       “title”: String,<br>
-       “photo”: String,<br>
-       “location”: String,<br>
-       “description”: String,<br>
-       “species”: String,<br>
-       “urgency”: String,<br>
-       “donations”: Number,<br>
-       “funding_goal”: Number,<br>
-       “userid”: Number (user id is required)<br>
+ ```
+    {
+       “title”: String,
+       “photo”: String,
+       “location”: String,
+       “description”: String,
+       “species”: String,
+       “urgency”: String,
+       “donations”: Number,
+       “funding_goal”: Number,
+       “userid”: Number (user id is required)
    }
+ ```
 
 * Edit a campaign (user type: organization only)<br>
  PUT: https://build-save-the-animals.herokuapp.com/campaigns/campaign/update/{id}<br>
@@ -53,4 +83,12 @@ password: password
  DELETE: https://build-save-the-animals.herokuapp.com/campaigns/campaign/delete/{id}
 
 
-
+* Make donation<br>
+ POST: https://build-save-the-animals.herokuapp.com/campaigns/campaign/donate<br>
+  ```
+  {
+    "amount": Number,
+    "userid": Number,
+    "campaignid": Number
+  }
+  ```

@@ -96,10 +96,11 @@ public class UserServiceImpl implements UserDetailsService, UserService
         for (UserRoles ur : user.getUserroles())
         {
             long id = ur.getRole()
-                        .getRoleid();
+                    .getRoleid();
             Role role = rolerepos.findById(id)
-                                 .orElseThrow(() -> new ResourceNotFoundException("Role id " + id + " not found!"));
+                    .orElseThrow(() -> new ResourceNotFoundException("Role id " + id + " not found!"));
             newRoles.add(new UserRoles(newUser, ur.getRole()));
+
         }
         newUser.setUserroles(newRoles);
 

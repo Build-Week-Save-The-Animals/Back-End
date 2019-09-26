@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "campaign")
+@Table(name = "campaigns")
 public class Campaign
 {
     @Id

@@ -2,7 +2,9 @@ package com.lambdaschool.starthere.controllers;
 
 import com.lambdaschool.starthere.exceptions.ResourceNotFoundException;
 import com.lambdaschool.starthere.models.Campaign;
+import com.lambdaschool.starthere.models.Donation;
 import com.lambdaschool.starthere.services.CampaignService;
+import com.lambdaschool.starthere.services.DonationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -19,6 +21,9 @@ public class CampaignController
 {
     @Autowired
     private CampaignService campaignService;
+
+    @Autowired
+    private DonationService donationService;
 
     // http://localhost:2019/campaigns/campaigns/?page=0&size=1
     // http://localhost:2019/campaigns/campaigns/?sort=title
@@ -57,6 +62,18 @@ public class CampaignController
     {
         campaignService.update(updateCampaign, id);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    // http://localhost:2019/campaigns/campaign/donate
+    @PostMapping(value = "campaign/donate",
+            consumes = {"application/json"},
+            produces = {"application/json"})
+    public ResponseEntity<?> donate(@Valid @RequestBody Donation newDonation) throws ResourceNotFoundException
+    {
+
+        donationService.save(newDonation);
+
+        return new ResponseEntity<>(null, HttpStatus.CREATED);
     }
 
 }

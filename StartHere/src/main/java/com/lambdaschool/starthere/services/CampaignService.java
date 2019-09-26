@@ -17,4 +17,6 @@ public interface CampaignService
     Campaign save(Campaign campaign);
 
     Campaign update(Campaign campaign, long id);
+
+    Campaign updateDonation(Campaign campaign, double amount);
 }
